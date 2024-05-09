@@ -1,1 +1,27 @@
-<p>user-table works!</p>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+                User Information
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                <app-my-table [HeadArray]="headArray" [GridArray]="userList">
+                (onEdit)="editUser($event)" (onDelete)="deleteUser($event)"</app-my-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="text-center text-primary">
+    <h2>Reusable Table for User data</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <app-my-table [HeadArray]="headArray" [GridArray]="userList"
+        (onEdit)="editUser($event)" (onDelete)="deleteUser($event)"></app-my-table>
+
+    </div>
+</div> -->
