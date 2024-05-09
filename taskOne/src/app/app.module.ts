@@ -5,17 +5,21 @@ import { AppComponent } from './app.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MyTableComponent } from './my-table/my-table.component';
+import { FormsModule } from '@angular/forms';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserTableComponent,
-    MyTableComponent
+    MyTableComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

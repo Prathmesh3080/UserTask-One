@@ -19,7 +19,7 @@ export class MyTableComponent {
    
   edit(item: any){
     debugger;
-    this.onEdit.emit(item);
+    item.onEdit = true;
   }
 
   delete(item: any){

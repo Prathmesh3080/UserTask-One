@@ -14,9 +14,12 @@
                     <th *ngFor="let head of HeadArray">{{ head.Head }}</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr *ngFor="let item of GridArray">
+            <tbody>   
+           <tr *ngFor="let item of GridArray">
                     <td *ngFor="let head of HeadArray">
+                        <div *ngIf="item.onEdit">
+                                <input type="text" [(ngModel)]="item.head" class="form-control">
+                        </div>
                         <div *ngIf="head.FieldName != ''">
                         {{item[head.FieldName]}}
                     </div>
