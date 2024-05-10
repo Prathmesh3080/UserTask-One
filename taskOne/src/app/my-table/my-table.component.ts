@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component,Input, Output, EventEmitter } from '@angular/core';
 
 
@@ -13,7 +14,7 @@ export class MyTableComponent {
   @Output() onEdit = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
 
-  constructor() {}
+  constructor(private http:HttpClient) {}
    
     ngOnInit(): void{}
    
@@ -23,8 +24,9 @@ export class MyTableComponent {
   }
 
   delete(item: any){
-    debugger;
-    this.onDelete.emit(item);
+    console.log(item);
+    this.http.delete(`https://jsonplaceholder.typicode.com/users/${item}`);
+    // this.onDelete.emit(item);
   }
 
 }

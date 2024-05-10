@@ -17,9 +17,6 @@ export class UserTableComponent {
     {'Head': 'Action', 'FieldName': ''}
   ];
 
-  /**
-   *
-   */
   constructor(private http:HttpClient) {}
 
   ngOnInit(): void{
@@ -37,7 +34,12 @@ export class UserTableComponent {
     debugger;
   }
 
-   deleteUser(item:any){
-    debugger;
-   } 
+  deleteUser(item:any){
+    console.log(item);
+    this.http.delete(`https://jsonplaceholder.typicode.com/users/${item}`);
+   }
+
+  //  deleteUser(item:any){
+  //   debugger;
+  //  } 
 }
